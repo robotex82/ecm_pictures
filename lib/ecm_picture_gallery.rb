@@ -1,0 +1,2 @@
+module EcmPictureGallery
+end

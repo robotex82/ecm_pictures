@@ -18,4 +18,10 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.5"
 
   s.add_development_dependency "sqlite3"
+  
+  # Testing
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "capybara"
+  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "guard-spork"
 end

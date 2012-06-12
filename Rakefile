@@ -1,29 +1,27 @@
-# encoding: UTF-8
-require 'rubygems'
+#!/usr/bin/env rake
 begin
   require 'bundler/setup'
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
-
-require 'rake'
-require 'rake/rdoctask'
-
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+begin
+  require 'rdoc/task'
+rescue LoadError
+  require 'rdoc/rdoc'
+  require 'rake/rdoctask'
+  RDoc::Task = Rake::RDocTask
 end
 
-task :default => :test
-
-Rake::RDocTask.new(:rdoc) do |rdoc|
+RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'EcmPictureGallery'
-  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.options << '--line-numbers'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+
+
+
+Bundler::GemHelper.install_tasks
+

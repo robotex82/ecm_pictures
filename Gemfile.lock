@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ecm_picture_gallery (0.0.1)
+    ecm_pictures (0.0.1)
       rails (~> 3.2.5)
 
 GEM
@@ -148,7 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  ecm_picture_gallery!
+  ecm_pictures!
   guard-rspec
   guard-spork
   jquery-rails

@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'paperclip'
+require 'friendly_id'
+
 module Ecm
   module Pictures
     class Engine < Rails::Engine

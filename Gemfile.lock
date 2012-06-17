@@ -51,6 +51,11 @@ GEM
     cocaine (0.2.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    factory_girl (3.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (3.4.0)
+      factory_girl (~> 3.4.0)
+      railties (>= 3.0.0)
     ffi (1.0.11)
     friendly_id (4.0.7)
     guard (1.1.1)
@@ -159,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   ecm_pictures!
+  factory_girl_rails
   guard-rspec
   guard-spork
   jquery-rails

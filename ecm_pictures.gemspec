@@ -27,4 +27,12 @@ Gem::Specification.new do |s|
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "guard-spork"
   s.add_development_dependency "factory_girl_rails"  
+  
+  # Server
+  s.add_development_dependency "thin"  
+  
+  # Dummy App
+  s.add_development_dependency "activeadmin"
+  s.add_development_dependency "sass-rails"
+  s.add_development_dependency "meta_search", ">= 1.1.0.pre"
 end

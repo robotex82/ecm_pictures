@@ -2,6 +2,11 @@ require 'rubygems'
 require 'paperclip'
 require 'friendly_id'
 
+# Ecm::Admin should do this!
+require 'activeadmin' 
+require 'sass-rails'
+require 'meta_search'
+
 module Ecm
   module Pictures
     class Engine < Rails::Engine

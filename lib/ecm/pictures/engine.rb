@@ -13,6 +13,12 @@ module Ecm
       config.to_prepare do
         ApplicationController.helper(Ecm::PicturesHelper)
       end  
+      
+      initializer :ecm_pictures_engine do
+        ActiveAdmin.setup do |active_admin_config|
+          active_admin_config.load_paths += Dir[File.dirname(__FILE__) + '/../../../app/admin']
+        end
+      end      
     end
   end  
 end

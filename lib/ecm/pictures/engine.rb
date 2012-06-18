@@ -1,6 +1,7 @@
 require 'rubygems'
 
 require 'acts_as_list'
+require 'active_admin-acts_as_list'
 require 'friendly_id'
 require 'paperclip'
 
@@ -13,7 +14,6 @@ module Ecm
   module Pictures
     class Engine < Rails::Engine
       paths["config/locales"] << File.dirname(__FILE__) + '/../../../config/locales'
-      puts paths["config/locales"].inspect
       
       config.to_prepare do
         ApplicationController.helper(Ecm::PicturesHelper)

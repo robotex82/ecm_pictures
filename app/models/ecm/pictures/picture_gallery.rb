@@ -6,6 +6,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   
   # acts as list
   acts_as_list
+  default_scope :order => 'position ASC'
   
   # friendly id
   extend FriendlyId
@@ -13,4 +14,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   
   # attributes
   attr_accessible :description, :name  
+  
+  # validations
+  validates :name, :presence => true
 end

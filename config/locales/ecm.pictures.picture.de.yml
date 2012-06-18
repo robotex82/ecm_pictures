@@ -5,10 +5,12 @@ de:
         created_at: "Erstellt am"
         description: "Beschreibung"
         image: "Datei"
+        image_file_size: "Größe"
         image_fingerprint: "Fingerabdruck"
         name: "Name"       
         picture_gallery: "Gallerie"
         position: "Position"
+        thumbnail: "Vorschau"
         updated_at: "Aktualisiert am"
     models:
       ecm/pictures/picture: 

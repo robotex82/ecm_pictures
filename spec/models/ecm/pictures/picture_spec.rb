@@ -4,6 +4,10 @@ module Ecm
       it "is a rails model" do
         should be_kind_of(ActiveRecord::Base)
       end
+      
+      it do
+        subject.should have(1).error_on(:image)
+      end       
     end
   end
 end    

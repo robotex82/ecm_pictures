@@ -2,4 +2,6 @@ de:
   ecm:
     pictures:
       active_admin:
-        menu: "Bilder"  
+        menu: "Bilder" 
+      warnings:
+        missing_gallery: "Die Gallerie %{name} wurde nicht gefunden."

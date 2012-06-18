@@ -15,5 +15,8 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   # attributes
-  attr_accessible :description, :image, :name
+  attr_accessible :description, :image, :name, :picture_gallery_id
+  
+  # validations
+  validates :image, :attachment_presence => true
 end

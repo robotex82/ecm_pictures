@@ -1,0 +1,14 @@
+de:
+  activerecord:
+    attributes:
+      ecm/pictures/picture_gallery:
+        created_at: "Erstellt am"
+        description: "Beschreibung"
+        name: "Name"
+        pictures_count: "Bilder" 
+        position: "Position"
+        updated_at: "Aktualisiert am"
+    models:
+      ecm/pictures/picture_gallery: 
+        one: "Bildgallerie"
+        other: "Bildgallerien"

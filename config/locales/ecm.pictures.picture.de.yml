@@ -1,0 +1,16 @@
+de:
+  activerecord:
+    attributes:
+      ecm/pictures/picture:
+        created_at: "Erstellt am"
+        description: "Beschreibung"
+        image: "Datei"
+        image_fingerprint: "Fingerabdruck"
+        name: "Name"       
+        picture_gallery: "Gallerie"
+        position: "Position"
+        updated_at: "Aktualisiert am"
+    models:
+      ecm/pictures/picture: 
+        one: "Bild"
+        other: "Bilder"     

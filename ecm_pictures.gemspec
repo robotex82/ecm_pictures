@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
   s.homepage    = "http://blog.robotex.de"
-  s.summary     = "TODO: Summary of EcmPictureGallery."
-  s.description = "TODO: Description of EcmPictureGallery."
+  s.summary     = "Picture galleries for active admin."
+  s.description = "Provides picture galleries for active admin."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 

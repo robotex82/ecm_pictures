@@ -7,6 +7,9 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   # acts as list
   acts_as_list :scope => :picture_gallery
   
+  # default scope
+  default_scope :order => "picture_gallery_id, position"
+  
   # friendly id
   extend FriendlyId
   friendly_id :name, :use => :slugged

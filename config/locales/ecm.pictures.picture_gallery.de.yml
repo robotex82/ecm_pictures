@@ -4,6 +4,7 @@ de:
       ecm/pictures/picture_gallery:
         created_at: "Erstellt am"
         description: "Beschreibung"
+        link_images: "Bilder verlinken"
         name: "Name"
         pictures: "Bilder"
         pictures_count: "Bilder" 

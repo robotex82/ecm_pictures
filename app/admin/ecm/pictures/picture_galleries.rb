@@ -11,6 +11,7 @@ if defined?(ActiveAdmin)
       f.inputs do
         f.input :name
         f.input :description
+        f.input :link_images
       end
       
       f.buttons
@@ -20,6 +21,9 @@ if defined?(ActiveAdmin)
       sortable_columns
       column :name
       column :pictures_count
+      column :link_images do |picture_gallery|
+        I18n.t(picture_gallery.link_images)
+      end
       column :created_at
       column :updated_at
       default_actions
@@ -29,6 +33,9 @@ if defined?(ActiveAdmin)
       attributes_table do
         row :name
         row :pictures_count
+        row :link_images do |picture_gallery|
+          I18n.t(picture_gallery.link_images)
+        end
         row :created_at
         row :updated_at
       end
@@ -45,7 +52,6 @@ if defined?(ActiveAdmin)
           column :thumbnail do |picture|
             link_to(image_tag(picture.image.url(:thumb)), admin_ecm_pictures_picture_path(picture))
           end
-          column :picture_gallery
           column :name
           column :image_file_size, :sortable => :image_file_size do |picture|
             number_to_human_size(picture.image_file_size)

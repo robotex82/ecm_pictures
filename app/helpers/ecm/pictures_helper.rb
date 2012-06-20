@@ -17,7 +17,13 @@ module Ecm::PicturesHelper
             gallery.pictures.collect do |picture|
              content_tag(:li, {:class => 'picture', :id => "picture-#{picture.to_param}"}) do
                 concat(content_tag(:h2, picture.name, :class => 'picture-name')) unless picture.name.blank?
-                concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), picture.image.url, {:rel => "lightbox[#{gallery_identifier}]"}))
+                
+                # Check if we should link images or not.
+                if gallery.link_images
+                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), picture.image.url, {:rel => "lightbox[#{gallery_identifier}]"}))
+                else 
+                  concat(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description))
+                end
                 concat(content_tag(:div, picture.description, :class => 'picture-description'))
               end
             end.join.html_safe

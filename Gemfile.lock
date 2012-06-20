@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ecm_pictures (0.0.5)
+    ecm_pictures (0.0.7)
       active_admin-acts_as_list (~> 0.0.5)
       acts_as_list (~> 0.1.6)
       friendly_id (~> 4.0.1)

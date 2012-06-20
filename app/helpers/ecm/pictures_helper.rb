@@ -20,7 +20,7 @@ module Ecm::PicturesHelper
                 
                 # Check if we should link images or not.
                 if gallery.link_images
-                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), picture.image.url, {:rel => "lightbox[#{gallery_identifier}]"}))
+                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), "#{picture.image.url}#{File.extname(picture.image_file_name)}", {:rel => "lightbox[#{gallery_identifier}]"}))
                 else 
                   concat(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description))
                 end

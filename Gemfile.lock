@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    ecm_pictures (0.0.1)
+    ecm_pictures (0.0.4)
       active_admin-acts_as_list (~> 0.0.5)
       acts_as_list (~> 0.1.6)
       friendly_id (~> 4.0.1)
-      paperclip (~> 3.0)
+      paperclip (~> 2.7)
       rails (~> 3.2.5)
 
 GEM
@@ -129,10 +129,9 @@ GEM
     multi_json (1.3.6)
     nokogiri (1.5.4)
     orm_adapter (0.1.0)
-    paperclip (3.1.2)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    paperclip (2.7.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
     polyamorous (0.5.0)

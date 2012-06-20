@@ -17,8 +17,12 @@ module Ecm
       
     # Enabling assets precompiling under rails 3.1 or greater
     if Rails.version >= '3.1'
-      initializer :assets do |config|
-        Rails.application.config.assets.precompile += %w( ecm_pictures.js ecm_pictures.css orangebox/*.png orangebox/*.gif )
+#      initializer :assets do |config|
+#        Rails.application.config.assets.precompile += %w( ecm_pictures.js ecm_pictures.css )
+#      end
+      initializer "ecm_pictures.asset_pipeline" do |app|
+        app.config.assets.precompile << 'ecm_pictures.js'
+        app.config.assets.precompile << 'ecm_pictures.css'
       end
     end
       

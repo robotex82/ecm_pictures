@@ -15,6 +15,13 @@ module Ecm
     class Engine < Rails::Engine
       paths["config/locales"] << File.dirname(__FILE__) + '/../../../config/locales'
       
+    # Enabling assets precompiling under rails 3.1 or greater
+    if Rails.version >= '3.1'
+      initializer :assets do |config|
+        Rails.application.config.assets.precompile += %w( ecm_pictures.js ecm_pictures.css orangebox/*.png orangebox/*.gif )
+      end
+    end
+      
       config.to_prepare do
         ApplicationController.helper(Ecm::PicturesHelper)
       end  

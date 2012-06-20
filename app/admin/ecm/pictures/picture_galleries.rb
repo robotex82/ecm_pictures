@@ -7,12 +7,24 @@ if defined?(ActiveAdmin)
     config.sort_order = 'position'
     sortable_member_actions
     
-    form do |f|
+    form :html => { :enctype => "multipart/form-data" } do |f|
       f.inputs do
         f.input :name
         f.input :description
         f.input :link_images
       end
+      
+     f.inputs do
+      f.has_many :pictures do |p|
+        p.input :name
+        #if !p.object.id.nil?
+        if p.object.persisted?
+          p.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+        end
+        p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:thumb))
+        p.input :description
+      end
+    end      
       
       f.buttons
     end

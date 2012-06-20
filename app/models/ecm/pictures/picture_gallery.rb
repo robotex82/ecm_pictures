@@ -3,6 +3,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   
   # associations
   has_many :pictures
+  accepts_nested_attributes_for :pictures, :allow_destroy => true
   
   # acts as list
   acts_as_list
@@ -16,7 +17,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   friendly_id :name, :use => :slugged
   
   # attributes
-  attr_accessible :description, :link_images, :name  
+  attr_accessible :description, :link_images, :name  , :pictures_attributes
   
   # validations
   validates :name, :presence => true

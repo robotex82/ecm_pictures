@@ -21,5 +21,6 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   attr_accessible :description, :image, :name, :picture_gallery_id
   
   # validations
-  validates :image, :attachment_presence => true
+  # validates :image, :attachment_presence => true
+  validates_attachment_presence :image
 end

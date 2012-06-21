@@ -20,7 +20,8 @@ module Ecm::PicturesHelper
                 
                 # Check if we should link images or not.
                 if gallery.link_images
-                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), "#{picture.image.url}#{File.extname(picture.image_file_name)}", {:rel => "lightbox[#{gallery_identifier}]"}))
+                  link_options = build_link_options_for_picture_in_gallery(gallery_identifier, picture)
+                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), "#{picture.image.url}#{File.extname(picture.image_file_name)}", link_options))
                 else 
                   concat(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description))
                 end
@@ -33,6 +34,21 @@ module Ecm::PicturesHelper
     rescue Exception => e
       return e.message
     end  
+  end
+  
+  def build_link_options_for_picture_in_gallery(gallery_identifier, picture)
+    link_options = {}
+    
+    # Add gallery identifier for orange box
+    link_options = { :rel => "lightbox[#{gallery_identifier}]" }
+    
+    # build the caption
+    caption = ""
+    caption << "<span class=\"caption-name\">#{picture.name}</span>" unless picture.name.blank?
+    caption << "<span class=\"caption-description\">#{picture.description}</span>" unless picture.description.blank?   
+    link_options[:"data-ob_caption"] = caption if caption.size > 0
+    
+    return link_options
   end
   
   def render_picture(name, options = {})

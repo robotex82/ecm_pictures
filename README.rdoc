@@ -1,3 +1,19 @@
 = EcmPictureGallery
 
 This project rocks and uses MIT-LICENSE.
+
+= Usage
+
+Add it to your gemfile:
+
+  gem 'ecm_pictures'
+  
+Install your bundle:
+
+  > bundle install
+  
+Update your layout to include the needed css and javascript:
+
+  <!-- ecm pictures -->
+  <%= javascript_include_tag "ecm_pictures" %>
+  <%= stylesheet_link_tag "ecm_pictures" %>

@@ -4,6 +4,7 @@ de:
       ecm/pictures/picture_gallery:
         created_at: "Erstellt am"
         description: "Beschreibung"
+        display_code: "Anzeigecode"
         link_images: "Bilder verlinken"
         name: "Name"
         pictures: "Bilder"

@@ -2,7 +2,7 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   self.table_name = 'ecm_pictures_picture_galleries'
   
   # associations
-  has_many :pictures
+  has_many :pictures, :dependent => :destroy
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   
   # acts as list
@@ -22,6 +22,9 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   # validations
   validates :name, :presence => true
   
+  def display_code
+    "<%= render_picture_gallery '#{self.name}' %>"
+  end
   
   def set_defaults
     if new_record?

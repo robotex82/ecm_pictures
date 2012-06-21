@@ -58,6 +58,12 @@ if defined?(ActiveAdmin)
         end
       end
       
+      panel Ecm::Pictures::PictureGallery.human_attribute_name(:display_code) do
+        div do
+          ecm_pictures_picture_gallery.display_code
+        end
+      end      
+      
       panel Ecm::Pictures::PictureGallery.human_attribute_name(:pictures) do
         table_for ecm_pictures_picture_gallery.pictures, :i18n => Ecm::Pictures::Picture do
           sortable_columns

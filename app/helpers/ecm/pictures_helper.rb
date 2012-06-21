@@ -13,6 +13,7 @@ module Ecm::PicturesHelper
           end      
         else
           content_tag(:h1, gallery.name) +
+          content_tag(:p, gallery.description, {:class => 'picture-gallery-description'}) +
           content_tag(:ul, {:class => 'pictures'}) do
             gallery.pictures.collect do |picture|
              content_tag(:li, {:class => 'picture', :id => "picture-#{picture.to_param}"}) do

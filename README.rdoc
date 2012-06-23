@@ -1,8 +1,18 @@
 = EcmPictureGallery
 
-This project rocks and uses MIT-LICENSE.
+= Purpose
 
-= Usage
+Create and administrate picture galleries in active admin and display them on
+in your ruby on rails applictation. Orangebox is used for lightbox support.
+
+= Features
+
+  * Drop in module for active admin.
+  * Render a gallery with one method call in your views.
+  * Lightbox support.
+  * Picture and Gallery sorting.
+
+= Installation
 
 Add it to your gemfile:
 
@@ -17,3 +27,15 @@ Update your layout to include the needed css and javascript:
   <!-- ecm pictures -->
   <%= javascript_include_tag "ecm_pictures" %>
   <%= stylesheet_link_tag "ecm_pictures" %>
+  
+= Usage
+
+You can administrate your pictures and picture galleries in active admin.
+
+Once you have a gallery, you can display it like this:
+
+  <%= render_picture_gallery 'Holidays 2012' %>
+
+= License
+
+This project rocks and uses MIT-LICENSE.

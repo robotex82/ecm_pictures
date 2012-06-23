@@ -1,4 +1,12 @@
 module Ecm::PicturesHelper
+  # renders picture galleries in your views
+  #
+  # = Usage
+  #
+  # Assume you have created a picture gallery named "Holidays 2012". You can 
+  # render it in your view as follows:
+  # 
+  #  <%= render_picture_gallery 'Holidays 2012' %>
   def render_picture_gallery(name, options = {})
     begin  
       options = {:preview_style => :thumb}.merge(options)
@@ -37,6 +45,7 @@ module Ecm::PicturesHelper
     end  
   end
   
+  # helper method to build link options for images inside a gallery.
   def build_link_options_for_picture_in_gallery(gallery_identifier, picture)
     link_options = {}
     
@@ -52,6 +61,7 @@ module Ecm::PicturesHelper
     return link_options
   end
   
+  # TODO: Implement this.
   def render_picture(name, options = {})
   end
 end

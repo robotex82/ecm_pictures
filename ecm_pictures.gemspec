@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Ecm::Pictures::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
-  s.homepage    = "http://blog.robotex.de"
+  s.homepage    = "https://github.com/robotex82/ecm_pictures"
   s.summary     = "Picture galleries for active admin."
   s.description = "Provides picture galleries for active admin."
 

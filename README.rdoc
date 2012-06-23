@@ -35,6 +35,13 @@ You can administrate your pictures and picture galleries in active admin.
 Once you have a gallery, you can display it like this:
 
   <%= render_picture_gallery 'Holidays 2012' %>
+  
+= Todo
+
+  * Tests, tests, tests.
+  * Better docs.
+  * Render picture helpers.
+  * Add a published flag to galleries and pictures.
 
 = License
 

@@ -1,18 +1,30 @@
+require 'spec_helper'
+
 module Ecm
   module Pictures
     describe PictureGallery do
-      it "is a rails model" do
-        should be_kind_of(ActiveRecord::Base)
+      subject { FactoryGirl.create(:ecm_pictures_picture_gallery) }
+      
+      context "associations" do
+        it { should have_many(:pictures) }
+      end      
+      
+      context "basic validations" do
+        it { should validate_presence_of(:name) }
+        it { should validate_uniqueness_of(:name) }
       end
       
-      it do
-        subject.should have(1).error_on(:name)
-      end       
+      context "acts as list" do
+        it { should respond_to(:move_to_top) }
+        it { should respond_to(:move_higher) }
+        it { should respond_to(:move_lower) }
+        it { should respond_to(:move_to_bottom) }
+      end
       
-      it "should have a nice id" do
-        picture_gallery = build(:picture_gallery, :name => 'Holydays 2012')
-        picture_gallery.save
-        picture_gallery.to_param.should == 'holydays-2012'
+      context "friendly id" do
+        subject { Factory.create(:ecm_pictures_picture_gallery, :name => 'Look, a slugged category!') }
+        
+        its(:to_param) { should eq('look-a-slugged-category') }
       end
     end
   end

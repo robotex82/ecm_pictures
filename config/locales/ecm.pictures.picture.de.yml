@@ -10,6 +10,7 @@ de:
         description: Beschreibung
         image: Datei
         image_file: Datei
+        image_file_name: Dateiname
         image_file_size: Größe
         image_fingerprint: Fingerabdruck
         name: Name

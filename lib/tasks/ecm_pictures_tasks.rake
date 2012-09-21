@@ -47,7 +47,7 @@ namespace :ecm do
         50.times do
           Ecm::Pictures::Picture.create! do |p|
             p.picture_gallery = picture_galleries.choice
-            p.image = File.open(File.join(Rails.root, 'spec/files', 'ecm/pictures/pictures', 'example.jpg'))
+            p.image = File.open(File.join(Ecm::Pictures::Engine.root, 'spec/files', 'ecm/pictures/pictures', 'example.jpg'))
             p.name = Faker::Product.brand if (rand(2) == 1)
             p.description = Faker::Lorem.paragraph(rand(10))
           end

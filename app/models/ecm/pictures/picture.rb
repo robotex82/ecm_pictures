@@ -15,7 +15,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   acts_as_list :scope => :picture_gallery
   
   # callbacks
-  before_validation :set_name_from_image_file_name, :if => Proc.new { |p| p.name.nil? }
+  before_validation :set_name_from_image_file_name, :if => Proc.new { |p| ( p.name.nil? || p.name.empty? ) }
 
   # default scope
   default_scope :order => "picture_gallery_id, position ASC"

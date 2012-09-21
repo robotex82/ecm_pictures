@@ -31,6 +31,26 @@ module Ecm
         it { should have_attached_file(:image) }
         it { should validate_attachment_presence(:image) }
       end
+
+      context "callbacks" do
+        subject { FactoryGirl.create(:ecm_pictures_picture, :name => nil) }
+
+        it { should be_valid }
+
+        it "should generate a name from the filename if name is nil" do
+          subject.valid?
+          subject.name.should eq("example")
+        end
+
+        subject { FactoryGirl.create(:ecm_pictures_picture, :name => "") }
+
+        it { should be_valid }
+
+        it "should generate a name from the filename if name is nil" do
+          subject.valid?
+          subject.name.should eq("example")
+        end
+      end
     end
   end
 end    

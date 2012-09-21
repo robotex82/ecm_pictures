@@ -2,14 +2,17 @@ class Ecm::Pictures::PictureGallery < ActiveRecord::Base
   self.table_name = 'ecm_pictures_picture_galleries'
 
   # associations
-  has_many :pictures, :dependent => :destroy
-  accepts_nested_attributes_for :pictures, :allow_destroy => true
+  has_many :pictures,
+           :dependent => :destroy,
+           :order => 'position'
 
   # attributes
   attr_accessible :description,
                   :link_images,
                   :name,
-                  :pictures_attributes
+                  :pictures_attributes,
+                  :position
+  accepts_nested_attributes_for :pictures, :allow_destroy => true
 
   # acts as list
   acts_as_list

@@ -8,7 +8,8 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   attr_accessible :description,
                   :image,
                   :name,
-                  :picture_gallery_id
+                  :picture_gallery_id,
+                  :position
 
   # acts as list
   acts_as_list :scope => :picture_gallery
@@ -17,7 +18,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
   before_validation :set_name_from_image_file_name, :if => Proc.new { |p| p.name.nil? }
 
   # default scope
-  default_scope :order => "picture_gallery_id, position"
+  default_scope :order => "picture_gallery_id, position ASC"
 
   # friendly id
   extend FriendlyId

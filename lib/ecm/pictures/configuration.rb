@@ -9,6 +9,17 @@ module Ecm
         yield self
       end
 
+      mattr_accessor :markup_languages
+      @@markup_languages = []
+
+      mattr_accessor :default_markup_language
+      @@default_markup_language = nil
+
+      mattr_accessor :picture_image_styles
+      @@picture_image_styles = {}
+      def picture_image_styles=(picture_image_styles)
+        @@picture_image_styles = HashWithIndifferentAccess.new(picture_image_styles)
+      end
     end
   end
 end

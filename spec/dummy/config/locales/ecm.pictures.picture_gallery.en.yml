@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      ecm/pictures/picture_gallery:
+        one: picture gallery
+        other: picture galleries
+    attributes:
+      ecm/pictures/picture_gallery:
+        created_at: created at
+        description: description
+        display_code: display code
+        link_images: link images
+        markup_language: markup language
+        name: name
+        pictures: pictures
+        pictures_count: pictures
+        position: position
+        updated_at: updated at
+

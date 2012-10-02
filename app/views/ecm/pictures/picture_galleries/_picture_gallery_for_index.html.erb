@@ -1,0 +1,11 @@
+<div class="thumbnail picture-gallery-preview span3" id="picture-gallery-<%= picture_gallery.id %>">
+  
+  <%= image_tag picture_gallery.pictures.first.image.url(:default_thumb) %>
+  <div class="caption">
+    <span class="small picture-count"><%= Ecm::Pictures::PictureGallery.human_attribute_name(:pictures) %>: <%= picture_gallery.pictures_count %></span>  
+    <h3><%= picture_gallery.name %></h3>
+    <div class="description"><%= mu(picture_gallery, :description) %></div>
+    <%= link_to t('ecm.pictures.actions.view'), picture_gallery, :class => 'btn btn-primary' %>
+  </div> 
+</div>
+

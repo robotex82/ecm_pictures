@@ -1,0 +1,5 @@
+<li class="span4 picture" id="picture-<%= picture.to_param %>">
+  <%= link_to("#{picture.image.url}#{File.extname(picture.image_file_name)}", :class => 'thumbnail') do %>
+    <%= image_tag(picture.image.url(:default_thumb)) %>
+  <% end %>
+</li>

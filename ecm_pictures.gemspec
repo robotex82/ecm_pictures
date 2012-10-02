@@ -19,11 +19,14 @@ Gem::Specification.new do |s|
 
   # Module dependencies
   s.add_dependency "acts_as_list", "~> 0.1.6"
+  s.add_dependency "acts_as_markup"
   s.add_dependency "active_admin-acts_as_list", "~> 0.0.5"
   s.add_dependency "friendly_id", "~> 4.0.1"
   s.add_dependency "paperclip", "~> 2.7"
 
+  # Dummy app
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "twitter-bootstrap-rails"
 
   # Development Server
   s.add_development_dependency "thin"

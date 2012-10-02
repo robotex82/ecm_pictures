@@ -1,0 +1,12 @@
+<div class="picture-gallery" id="picture-gallery-<%= picture_gallery.id %>">
+  <div class="picture-gallery-description">
+    <%= mu picture_gallery, :description %>
+  </div>
+  <div class="picture-gallery_pictures row-fluid">
+    <ul class="thumbnails">
+      <% picture_gallery.pictures.each do |picture| %>
+        <%= render :partial => 'ecm/pictures/pictures/picture_for_gallery', :locals => { :picture => picture } %>
+      <% end %>
+    </ul>
+  </div>
+</div>

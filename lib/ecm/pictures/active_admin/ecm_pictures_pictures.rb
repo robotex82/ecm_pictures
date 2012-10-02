@@ -15,13 +15,17 @@ ActiveAdmin.register Ecm::Pictures::Picture do
       f.input :description
     end
 
+    f.inputs do
+      f.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
+    end
+
     f.buttons
   end
 
   index do
     selectable_column
     column :thumbnail do |picture|
-      link_to(image_tag(picture.image.url(:thumb)), admin_ecm_pictures_picture_path(picture))
+      link_to(image_tag(picture.image.url(:default_thumb)), admin_ecm_pictures_picture_path(picture))
     end
     column :picture_gallery
     column :name
@@ -39,7 +43,7 @@ ActiveAdmin.register Ecm::Pictures::Picture do
 
     panel Ecm::Pictures::Picture.human_attribute_name(:description) do
       div do
-        ecm_pictures_picture.description
+        mu ecm_pictures_picture, :description
       end
     end
   end

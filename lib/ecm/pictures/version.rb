@@ -1,5 +1,5 @@
 module Ecm
   module Pictures
-    VERSION = "0.0.21"
+    VERSION = "1.0.0.pre"
   end  
 end

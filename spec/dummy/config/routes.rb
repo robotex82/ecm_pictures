@@ -3,7 +3,10 @@ Dummy::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => 'home#index'
+  resources :ecm_pictures_picture_galleries, :controller => "ecm/pictures/picture_galleries"
+  resources :ecm_pictures_pictures, :controller => "ecm/pictures/pictures"
+
+  root :to => 'ecm/pictures/picture_galleries#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

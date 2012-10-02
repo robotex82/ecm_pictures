@@ -1,14 +1,8 @@
-require 'rubygems'
-
 require 'acts_as_list'
+require 'acts_as_markup'
 require 'active_admin-acts_as_list'
 require 'friendly_id'
 require 'paperclip'
-
-# Ecm::Admin should do this!
-require 'activeadmin'
-require 'sass-rails'
-require 'meta_search'
 
 require 'ecm/pictures/engine'
 require 'ecm/pictures/configuration'

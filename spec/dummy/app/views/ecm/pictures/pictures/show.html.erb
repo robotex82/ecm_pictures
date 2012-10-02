@@ -1,0 +1,7 @@
+<h1><%= @picture.to_s %></h1>
+
+<p><%= render @picture %></p>
+
+<p><%= link_to @picture.picture_gallery, @picture.picture_gallery, :class => 'btn' %></p>
+
+<p><%= link_to t('back'), :back %></p>

@@ -4,9 +4,15 @@ class CreateEcmPicturesPictures < ActiveRecord::Migration
     create_table :ecm_pictures_pictures do |t|
       t.string :name
       t.text :description
+
+      # associations
+      t.references :picture_gallery
       
       # acts as list
       t.integer :position
+
+      # acts as markup
+      t.string :markup_language
       
       # friendly id
       t.string :slug
@@ -18,9 +24,6 @@ class CreateEcmPicturesPictures < ActiveRecord::Migration
       t.string :image_content_type
       t.timestamp :image_updated_at
       t.string :image_fingerprint
-      
-      # references
-      t.references :picture_gallery
 
       t.timestamps
     end

@@ -1,0 +1,7 @@
+<h1><%= @picture_gallery.to_s %></h1>
+
+<%= render @picture_gallery %>
+
+<p><%= link_to Ecm::Pictures::PictureGallery.model_name.human(:count => :other), ecm_pictures_picture_galleries_path, :class => 'btn' %></p>
+
+<p><%= link_to t('back'), :back %></p>

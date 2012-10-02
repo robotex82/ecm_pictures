@@ -14,32 +14,14 @@ module Ecm::PicturesHelper
       gallery = Ecm::Pictures::PictureGallery.where(:name => name.to_s).first
       gallery_identifier = gallery.to_param rescue 'missing'
 
-      content_tag(:div, :class => 'picture-gallery', :id => "picture-gallery-#{gallery_identifier}") do
-        if gallery.nil?
-          content_tag(:span, :class => 'warning') do
-            I18n.t('ecm.pictures.warnings.missing_gallery', :name => name.to_s)
-          end      
-        else
-          content_tag(:h1, gallery.name) +
-          content_tag(:p, gallery.description, {:class => 'picture-gallery-description'}) +
-          content_tag(:ul, {:class => 'pictures'}) do
-            gallery.pictures.collect do |picture|
-             content_tag(:li, {:class => 'picture', :id => "picture-#{picture.to_param}"}) do
-                concat(content_tag(:h2, picture.name, :class => 'picture-name')) unless picture.name.blank?
-                
-                # Check if we should link images or not.
-                if gallery.link_images
-                  link_options = build_link_options_for_picture_in_gallery(gallery_identifier, picture)
-                  concat(link_to(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description), "#{picture.image.url}#{File.extname(picture.image_file_name)}", link_options))
-                else 
-                  concat(image_tag(picture.image.url(options[:preview_style]), :alt => picture.description))
-                end
-                concat(content_tag(:div, picture.description, :class => 'picture-description'))
-              end
-            end.join.html_safe
-          end.html_safe
-        end
-      end.html_safe
+      if gallery.nil?
+        content_tag(:span, :class => 'warning') do
+          I18n.t('ecm.pictures.warnings.missing_gallery', :name => name.to_s)
+        end      
+      else
+        render gallery
+      end
+
     rescue Exception => e
       return e.message
     end  
@@ -50,12 +32,15 @@ module Ecm::PicturesHelper
     link_options = {}
     
     # Add gallery identifier for orange box
-    link_options = { :rel => "lightbox[#{gallery_identifier}]" }
+    link_options[:rel] = "lightbox[#{gallery_identifier}]"
+    
+    # Add thumbnail class for twitter bootstrap
+    link_options[:class] = "thumbnail"
     
     # build the caption
     caption = ""
-    caption << "<span class=\"caption-name\">#{picture.name}</span>" unless picture.name.blank?
-    caption << "<span class=\"caption-description\">#{picture.description}</span>" unless picture.description.blank?   
+    caption << "<div class=\"caption-name\">#{picture.name}</div>" unless picture.name.blank?
+    caption << "<div class=\"caption-description\">#{picture.description}</div>" unless picture.description.blank?   
     link_options[:"data-ob_caption"] = caption if caption.size > 0
     
     return link_options

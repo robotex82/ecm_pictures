@@ -1,0 +1,29 @@
+ul.thumbnails > li {
+  margin-left: 0 !important;
+  padding-right: 15px;
+}
+
+.picture-gallery-preview {
+  margin-bottom: 10px;
+  margin-left: 0 !important;
+  margin-right: 10px;  
+}
+
+.picture-gallery-preview h3 {
+  margin-bottom: 0;
+}
+
+.picture-gallery-preview .picture-count {
+  font-size: 90%;
+  color: grey;
+}
+
+.picture-gallery-preview .description {
+  height: 50px;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+}
+
+.picture-gallery-preview img {
+  height: 150px;
+}

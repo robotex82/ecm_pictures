@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Ecm::PicturesHelper do
-  describe "render_picture_gallery" do
+  describe "#render_picture_gallery" do
     it "returns a div tag" do
       helper.render_picture_gallery('Holydays 2012').should =~ /div/
     end

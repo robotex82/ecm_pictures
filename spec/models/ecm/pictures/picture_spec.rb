@@ -9,11 +9,6 @@ module Ecm
         it { should belong_to(:picture_gallery) }
       end
       
-      context "basic validations" do
-        # name is set to the image filename without extension if name is missing.
-        # it { should validate_presence_of(:name) }
-      end
-      
       context "acts as list" do
         it { should respond_to(:move_to_top) }
         it { should respond_to(:move_higher) }
@@ -32,7 +27,12 @@ module Ecm
         it { should validate_attachment_presence(:image) }
       end
 
-      context "callbacks" do
+      context 'sets default handler' do
+        subject { Ecm::Pictures::Picture.new }
+        its(:markup_language) { should eq(Ecm::Pictures::Configuration.default_markup_language.to_s) }
+      end
+
+      context "sets default name" do
         subject { FactoryGirl.create(:ecm_pictures_picture, :name => nil) }
 
         it { should be_valid }
@@ -50,6 +50,14 @@ module Ecm
           subject.valid?
           subject.name.should eq("example")
         end
+      end
+
+      context "validations" do
+        # name is set to the image filename without extension if name is missing.
+        # it { should validate_presence_of(:name) }
+
+        it { should ensure_inclusion_of(:markup_language).in_array(Ecm::Pictures::Configuration.markup_languages.map(&:to_s)) }
+        it { should_not allow_value(%w[foo bar baz]).for(:markup_language) }
       end
     end
   end

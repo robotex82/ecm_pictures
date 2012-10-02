@@ -9,7 +9,9 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require
-require "ecm_pictures"
+require 'activeadmin'
+require 'twitter-bootstrap-rails'
+require 'ecm_pictures'
 
 module Dummy
   class Application < Rails::Application

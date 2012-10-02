@@ -2,10 +2,7 @@ de:
   back: Zurück
   ecm:
     pictures:
-      actions:
-        view: Anzeigen
       active_admin:
         menu: "Bilder" 
       warnings:
         missing_gallery: "Die Galerie %{name} wurde nicht gefunden."
-

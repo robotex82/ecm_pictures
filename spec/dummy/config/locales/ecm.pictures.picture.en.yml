@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      ecm/pictures/picture:
+        one: picture
+        other: pictures
+    attributes:
+      ecm/pictures/picture:
+        created_at: created at
+        description: description
+        image: image
+        image_file: image
+        image_file_name: image filename
+        image_file_size: image size
+        image_fingerprint: image fingerprint
+        markup_language: markup language
+        name: name
+        picture_gallery: picture gallery
+        position: position
+        thumbnail: thumbnail
+        updated_at: updated at
+

@@ -1,0 +1,5 @@
+<h1>Picture Galleries</h1>
+
+<% @picture_galleries.each do |pg| %>
+  <%= render :partial => 'ecm/pictures/picture_galleries/picture_gallery_for_index', :locals => { :picture_gallery => pg } %>
+<% end %>

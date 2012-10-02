@@ -31,9 +31,11 @@ namespace :ecm do
 
       desc "Creates example data for galleries"
       task :populate_galleries, [] => [:environment] do |t, args|
+        require "ffaker"
         5.times do |i|
           Ecm::Pictures::PictureGallery.create! do |pg|
             pg.name = "Picture Gallery #{i}"
+            pg.description = Faker::Lorem.paragraph(rand(3))
           end
         end
       end

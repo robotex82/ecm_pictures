@@ -6,6 +6,13 @@ Dummy::Application.routes.draw do
   resources :ecm_pictures_picture_galleries, :controller => "ecm/pictures/picture_galleries"
   resources :ecm_pictures_pictures, :controller => "ecm/pictures/pictures"
 
+
+  resource :demo do
+    get :picture_gallery_helper, :on => :member
+    get :picture_helper, :on => :member
+  end
+
+
   root :to => 'ecm/pictures/picture_galleries#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

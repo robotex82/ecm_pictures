@@ -1,0 +1,13 @@
+<h1>Picture gallery helper demo</h1>
+
+<h2>With existing picture gallery</h2>
+
+<p class="well">This is an example with an existing picture gallery:</p>
+
+<%= render_picture_gallery @picture_gallery_name %>
+
+<h2>With missing picture gallery</h2>
+
+<p class="well">This is an example with a missing picture gallery:</p>
+
+<%= render_picture_gallery 'missing' %>

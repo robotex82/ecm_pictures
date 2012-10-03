@@ -5,7 +5,11 @@ de:
       actions:
         view: Anzeigen
       active_admin:
-        menu: "Bilder" 
-      warnings:
-        missing_gallery: "Die Galerie %{name} wurde nicht gefunden."
+        menu: "Bilder"
+      picture:
+        warnings:
+          missing: "Das Bild %{name} wurde nicht gefunden."
+      picture_gallery:
+        warnings:
+          missing: "Die Galerie %{name} wurde nicht gefunden."
 

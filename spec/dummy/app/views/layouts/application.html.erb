@@ -47,9 +47,9 @@
           <a class="brand" href="<%= root_path %>">Dummy</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <% DemosController.action_methods.each do |am| %>
+                <li><%= link_to am.humanize, { :controller => '/demos', :action => am }  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

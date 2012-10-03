@@ -8,6 +8,7 @@ de:
       ecm/pictures/picture:
         created_at: Erstellt am
         description: Beschreibung
+        display_code: Anzeigecode
         image: Datei
         image_file: Datei
         image_file_name: Dateiname

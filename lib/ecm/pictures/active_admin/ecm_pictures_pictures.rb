@@ -46,6 +46,12 @@ ActiveAdmin.register Ecm::Pictures::Picture do
         mu ecm_pictures_picture, :description
       end
     end
+
+    panel Ecm::Pictures::Picture.human_attribute_name(:display_code) do
+      div do
+        ecm_pictures_picture.display_code
+      end
+    end
   end
 
   sidebar Ecm::Pictures::Picture.human_attribute_name(:details), :only => :show do

@@ -12,21 +12,37 @@ in your ruby on rails applictation. Orangebox is used for lightbox support.
   * Lightbox support.
   * Picture and Gallery sorting.
 
+
 = Installation
+
 
 Add it to your gemfile:
 
+  # Gemfile
   gem 'ecm_pictures'
   
 Install your bundle:
 
   > bundle install
   
-Update your layout to include the needed css and javascript:
+Generate initializer:
 
-  <!-- ecm pictures -->
-  <%= javascript_include_tag "ecm_pictures" %>
-  <%= stylesheet_link_tag "ecm_pictures" %>
+  > rails generate ecm:pictures:install 
+
+Generatre the migrations:
+
+  > rake ecm_pictures_engine:install:migrations
+
+Migrate:
+
+  > rake db:migrate
+
+  
+== Optional: Generate locale files
+
+You may want to copy the locales to your app:
+
+  > rails generate ecm:pictures:locales
   
 = Usage
 

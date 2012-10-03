@@ -40,6 +40,10 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
                               :inclusion => Ecm::Pictures::Configuration.markup_languages
   validates :name, :presence => true
 
+  def display_code
+    "<%= render_picture '#{self.name}' %>"
+  end
+
   def to_s
     name
   end

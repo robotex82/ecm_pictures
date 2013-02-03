@@ -59,7 +59,9 @@ module Ecm::PicturesHelper
           content_tag(:p, I18n.t('ecm.pictures.picture.warnings.missing', :name => name.to_s))
         end
       else
-        render picture
+        content_tag(:div, :class => 'row') do
+          render picture
+        end
       end
 
     rescue Exception => e

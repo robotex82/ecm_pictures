@@ -1,6 +1,6 @@
 class Ecm::Pictures::PicturesController < ApplicationController
   def index
-    @picture = Ecm::Pictures::Picture.all
+    @pictures = Ecm::Pictures::Picture.all
   end
 
   def show

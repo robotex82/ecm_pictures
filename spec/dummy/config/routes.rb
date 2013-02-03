@@ -3,9 +3,7 @@ Dummy::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :ecm_pictures_picture_galleries, :controller => "ecm/pictures/picture_galleries"
-  resources :ecm_pictures_pictures, :controller => "ecm/pictures/pictures"
-
+  Ecm::Pictures::Routing.routes(self)
 
   resource :demo do
     get :picture_gallery_helper, :on => :member

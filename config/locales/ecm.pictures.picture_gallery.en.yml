@@ -16,4 +16,6 @@ en:
         pictures_count: pictures
         position: position
         updated_at: updated at
+  resources:
+    ecm_pictures_picture_galleries: picture-galleries
 

@@ -19,7 +19,7 @@ ActiveAdmin.register Ecm::Pictures::Picture do
       f.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
     end
 
-    f.buttons
+    f.actions
   end
 
   index do

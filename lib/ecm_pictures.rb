@@ -6,6 +6,7 @@ require 'paperclip'
 
 require 'ecm/pictures/engine'
 require 'ecm/pictures/configuration'
+require 'ecm/pictures/routing'
 require 'ecm/pictures/version'
 
 module Ecm

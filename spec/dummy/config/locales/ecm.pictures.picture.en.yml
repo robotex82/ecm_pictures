@@ -8,6 +8,7 @@ en:
       ecm/pictures/picture:
         created_at: created at
         description: description
+        display_code: display code
         image: image
         image_file: image
         image_file_name: image filename
@@ -19,4 +20,6 @@ en:
         position: position
         thumbnail: thumbnail
         updated_at: updated at
+  resources:
+    ecm_pictures_pictures: pictures
 

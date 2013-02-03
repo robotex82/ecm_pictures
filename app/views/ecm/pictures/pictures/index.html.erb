@@ -1,0 +1,10 @@
+<h1><%= Ecm::Pictures::Picture.model_name.human %></h1>
+
+<% @pictures.each do |picture| %>
+  <p>
+    <h2><%= picture %></h2>
+    <div class="row">
+      <%= render picture %>
+    </div>
+  </p>
+<% end %>

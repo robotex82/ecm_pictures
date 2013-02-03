@@ -32,7 +32,7 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
     end
   end
 
-    f.buttons
+    f.actions
   end
 
   index do

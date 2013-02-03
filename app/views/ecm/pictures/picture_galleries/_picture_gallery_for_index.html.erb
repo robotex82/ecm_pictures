@@ -1,7 +1,9 @@
 <div class="thumbnail picture_gallery-preview span3" id="picture-gallery-<%= picture_gallery.id %>">
-  <div class="picture-image">
-    <%= image_tag picture_gallery.pictures.first.image.url(:default_thumb) %>  
-  </div>
+  <% if picture_gallery.pictures.first.respond_to?(:image) %>
+    <div class="picture-image">
+      <%= image_tag picture_gallery.pictures.first.image.url(:default_thumb) %>  
+    </div>
+  <% end %>
   <div class="caption"> 
     <h3><%= picture_gallery.name %></h3>
     <div class="description"><%= mu(picture_gallery, :description) %></div>

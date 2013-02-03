@@ -39,7 +39,7 @@ module Ecm
 
         it "should generate a name from the filename if name is nil" do
           subject.valid?
-          subject.name.should eq("example")
+          subject.name.should eq("image")
         end
 
         subject { FactoryGirl.create(:ecm_pictures_picture, :name => "") }
@@ -48,7 +48,7 @@ module Ecm
 
         it "should generate a name from the filename if name is nil" do
           subject.valid?
-          subject.name.should eq("example")
+          subject.name.should eq("image")
         end
       end
 

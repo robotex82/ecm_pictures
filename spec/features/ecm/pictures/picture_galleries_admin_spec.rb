@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Ecm::Pictures::Picture admin' do
+feature 'Ecm::Pictures::PictureGallery admin' do
   include ActiveAdmin::SignInHelper
 
   def set_locale
@@ -12,11 +12,11 @@ feature 'Ecm::Pictures::Picture admin' do
   end
 
   def set_resource_path
-    @resource_path = "ecm_pictures_pictures"
+    @resource_path = "ecm_pictures_picture_galleries"
   end
 
   def set_resource_class
-    @resource_class = Ecm::Pictures::Picture
+    @resource_class = Ecm::Pictures::PictureGallery
   end
 
   def set_resource_factory_name
@@ -31,13 +31,12 @@ feature 'Ecm::Pictures::Picture admin' do
   end
 
   def fill_new_form
-    fill_in "ecm_pictures_picture[name]", :with => "Example picture"
-    attach_file "ecm_pictures_picture[image]", File.join(Rails.root, "spec/files", "ecm/pictures", "picture/image.jpg")
-    select 'textile', :from => "ecm_pictures_picture[markup_language]"
+    fill_in "ecm_pictures_picture_gallery[name]", :with => "Example picture gallery"
+    select 'textile', :from => "ecm_pictures_picture_gallery[markup_language]"
   end
 
   def fill_edit_form
-    fill_in     "ecm_pictures_picture[name]", :with => "An updated picture"
+    fill_in "ecm_pictures_picture_gallery[name]", :with => "An updated picture gallery"
   end
 
   background do

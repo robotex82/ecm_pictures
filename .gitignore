@@ -9,3 +9,4 @@ spec/dummy/public/system/
 *.gem
 /doc
 .yardoc
+tmp/

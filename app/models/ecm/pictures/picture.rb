@@ -17,7 +17,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
 
   # acts as markup
   acts_as_markup :language => :variable, :columns => [ :description, :description ]
-  
+
   # callbacks
   after_initialize :set_defaults
   before_validation :set_name_from_image_file_name, :if => Proc.new { |p| ( p.name.nil? || p.name.empty? ) }
@@ -40,14 +40,20 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
                               :inclusion => Ecm::Pictures::Configuration.markup_languages
   validates :name, :presence => true
 
-  def display_code
-    "<%= render_picture '#{self.name}' %>"
+  def display_code(style)
+    case style
+    when :erb
+      "<%= render_picture '#{self.name}' %>"
+    when :textile
+      "!#{image.url}!".gsub(/\?[0-9]*/, '')
+    else
+    end
   end
 
   def to_s
     name
   end
-  
+
   private
 
   def set_defaults
@@ -55,7 +61,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
       self.markup_language ||= Ecm::Pictures::Configuration.default_markup_language
     end
   end
-  
+
   def set_name_from_image_file_name
     self.name = File.basename(image_file_name, File.extname(image_file_name)) unless image_file_name.nil?
   end

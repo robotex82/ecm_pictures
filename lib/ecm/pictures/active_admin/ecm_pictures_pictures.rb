@@ -49,7 +49,7 @@ ActiveAdmin.register Ecm::Pictures::Picture do
 
     panel Ecm::Pictures::Picture.human_attribute_name(:display_code) do
       div do
-        ecm_pictures_picture.display_code
+        ecm_pictures_picture.display_code(:textile)
       end
     end
   end

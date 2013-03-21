@@ -10,6 +10,7 @@ require "sprockets/railtie"
 
 Bundler.require
 require 'activeadmin'
+require "less-rails"
 require 'twitter-bootstrap-rails'
 require 'ecm_pictures'
 

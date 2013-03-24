@@ -1,3 +1,11 @@
+
+1.0.4.pre / 2013-03-24 
+======================
+
+  * Enhancement: Added initializer option for picture li css classes.
+  * Fixed: Bootstrap Lightbox support.
+  * Fixed: Dummy app
+
 1.0.3.pre / 2013-03-17 
 ======================
 

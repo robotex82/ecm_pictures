@@ -15,6 +15,9 @@ module Ecm
       mattr_accessor :default_markup_language
       @@default_markup_language = nil
 
+      mattr_accessor :picture_for_gallery_css_classes
+      @@picture_for_gallery_css_classes = nil
+
       mattr_accessor :picture_image_styles
       @@picture_image_styles = {}
       def picture_image_styles=(picture_image_styles)

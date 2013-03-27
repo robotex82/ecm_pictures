@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.11"
 
   # Module dependencies
-  s.add_dependency "acts_as_list", "~> 0.1.6"
+  s.add_dependency "acts_as_list"
   s.add_dependency "acts_as_markup"
   s.add_dependency "active_admin-acts_as_list", "~> 0.0.5"
   s.add_dependency "friendly_id", "~> 4.0.1"

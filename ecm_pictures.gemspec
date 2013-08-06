@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 3.2.11"
+  s.add_dependency "rails", "~> 3.2.13"
 
   # Module dependencies
   s.add_dependency "acts_as_list"
@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'therubyracer'
 
   # Tests
-  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara', '< 2.1.0'
   s.add_development_dependency 'rspec-rails', '~> 2.0'
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'factory_girl_rails', '~> 1.0'
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
 
   # Test automation
   s.add_development_dependency 'rb-inotify', '~> 0.8.8'
-  # s.add_development_dependency 'guard-rails' # See gemfile for a patched version, for engine support.
+  s.add_development_dependency 'guard-rails'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'guard-bundler'
 end

@@ -8,6 +8,7 @@ require 'ecm/pictures/engine'
 require 'ecm/pictures/configuration'
 require 'ecm/pictures/routing'
 require 'ecm/pictures/version'
+require 'ecm/pictures/active_admin/pictureable_helper'
 
 module Ecm
   module Pictures

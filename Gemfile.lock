@@ -18,7 +18,7 @@ GIT
 PATH
   remote: .
   specs:
-    ecm_pictures (1.0.5.pre)
+    ecm_pictures (1.0.6.pre)
       active_admin-acts_as_list (~> 0.0.5)
       acts_as_list
       acts_as_markup

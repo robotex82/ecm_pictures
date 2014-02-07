@@ -1,4 +1,9 @@
 
+1.0.6.pre / 2014-02-07 
+======================
+
+  * Finished preliminary polymorphism support.
+
 1.0.5.pre / 2013-03-28 
 ======================
 

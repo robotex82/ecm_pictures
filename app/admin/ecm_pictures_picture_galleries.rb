@@ -6,6 +6,19 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
   config.sort_order = 'position'
   sortable_member_actions
 
+  member_action :upload_picture, :method => :post do
+    ecm_pictures_picture_gallery = Ecm::Pictures::PictureGallery.find(params[:id])
+    picture = ecm_pictures_picture_gallery.pictures.new(:image => params[:file])
+
+    if picture.save
+      render :json => { :message => "Success"}.to_json
+    else
+      render :json => picture.errors.to_json
+    end
+    # redirect_to [:admin, ecm_pictures_picture_gallery], {:notice => "Upload picture!"}
+    # render :json => params.to_json
+  end
+
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :name
@@ -76,6 +89,15 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
           link_to(I18n.t('active_admin.edit'), [:edit, :admin, picture], :class => "member_link edit_link")
         end # column
       end # table_for
+    end # panel
+
+    panel Ecm::Pictures::PictureGallery.human_attribute_name(:picture_upload) do
+      div :id => 'picture_upload' do
+        I18n.t('ecm.pictures.actions.drop')
+      end
+      span(:style => 'display: none;', :id => 'picture_upload_url') do
+        url_for([:upload_picture, :admin, ecm_pictures_picture_gallery])
+      end
     end # panel
   end # show
 

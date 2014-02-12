@@ -6,6 +6,7 @@ de:
     pictures:
       actions:
         view: Anzeigen
+        drop: Ziehen Sie Bilder hier rein, um sie hochzuladen
       active_admin:
         menu: "Bilder"
       picture:

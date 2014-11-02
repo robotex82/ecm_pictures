@@ -3,6 +3,7 @@ require 'acts_as_markup'
 require 'active_admin-acts_as_list'
 require 'friendly_id'
 require 'paperclip'
+require 'redcloth'
 
 require 'ecm/pictures/engine'
 require 'ecm/pictures/configuration'
@@ -14,4 +15,3 @@ module Ecm
     extend Configuration
   end
 end
-

@@ -18,11 +18,12 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.11"
 
   # Module dependencies
-  s.add_dependency "acts_as_list"
+  s.add_dependency "acts_as_list", "< 0.3.0"
   s.add_dependency "acts_as_markup"
   s.add_dependency "active_admin-acts_as_list", "~> 0.0.5"
   s.add_dependency "friendly_id", "~> 4.0.1"
   s.add_dependency "paperclip", "~> 2.7"
+  s.add_dependency 'RedCloth'
 
   # Dummy app
   s.add_development_dependency "sqlite3"

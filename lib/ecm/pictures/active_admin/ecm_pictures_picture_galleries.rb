@@ -17,20 +17,20 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
       f.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
     end
 
-   f.inputs do
-    f.has_many :pictures do |p|
-      p.input :name
-      if p.object.persisted?
-        p.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
-      end
-      p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:default_thumb))
-      p.input :description
+    f.inputs do
+      f.has_many :pictures do |p|
+        p.input :name
+        if p.object.persisted?
+          p.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+        end
+        p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:default_thumb))
+        p.input :description
 
-      p.inputs do
-        p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
+        p.inputs do
+          p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
+        end
       end
     end
-  end
 
     f.actions
   end
@@ -91,4 +91,3 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
     end
   end # sidebar
 end if defined?(::ActiveAdmin)
-

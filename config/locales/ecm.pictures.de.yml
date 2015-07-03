@@ -1,4 +1,6 @@
 de:
+  active_admin:
+    delete_link: "Verknüpfung entfernen"
   back: Zurück
   ecm:
     pictures:

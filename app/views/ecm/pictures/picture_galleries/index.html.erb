@@ -1,5 +1,9 @@
-<h1>Picture Galleries</h1>
+<h1><%= Ecm::Pictures::PictureGallery.model_name.human(:count => :other) %></h1>
 
-<% @picture_galleries.each do |pg| %>
-  <%= render :partial => 'ecm/pictures/picture_galleries/picture_gallery_for_index', :locals => { :picture_gallery => pg } %>
-<% end %>
+<div class="picture-galleries row-fluid">
+  <ul class="thumbnails">
+  <% @picture_galleries.each do |pg| %>
+    <%= render :partial => 'ecm/pictures/picture_galleries/picture_gallery_for_index', :locals => { :picture_gallery => pg } %>
+  <% end %>
+  </ul>
+</div>

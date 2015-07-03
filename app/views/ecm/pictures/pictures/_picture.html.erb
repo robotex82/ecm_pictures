@@ -1,6 +1,5 @@
-<div class="picture span3" id="picture-<%= picture.to_param %>">
-  <%= link_to("#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :class => 'thumbnail') do %>
+<li class="<%= Ecm::Pictures::Configuration.picture_css_classes %>" id="picture-<%= picture.to_param %>">
+  <%= link_to("#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery", :class => 'thumbnail') do %>
     <% image_tag(picture.image.url(:default_thumb)) %>
   <% end %>
-</div>
-
+</li>

@@ -1,11 +1,10 @@
 <li class="<%= Ecm::Pictures::Configuration.picture_for_gallery_css_classes %>" id="picture-<%= picture.to_param %>">
-  <div class="thumbnail">
-    <% if picture.picture_gallery.link_images %>
-      <%= link_to(image_tag(picture.image.url(:default_thumb), :alt => picture.name), "#{picture.image.url}#{File.extname(picture.image_file_name.downcase)}", { :"data-gallery" => "gallery", :title => picture.name }) %>
-    <% else %>
-      <%= image_tag(picture.image.url(:default_thumb), :class => 'thumbnail') %>
+  <% if picture.picture_gallery.link_images %>
+    <%= link_to("#{picture.image.url}#{File.extname(picture.image_file_name).downcase}", :'data-gallery' => "gallery") do %>
+      <% image_tag(picture.image.url(:default_thumb)) %>
     <% end %>
-    <div class="caption"><%= mu(picture, :description) %></div>
-  </div>
+  <% else %>
+    <%= image_tag(picture.image.url(:default_thumb), :class => 'thumbnail') %>
+  <% end %>
+  <div class="caption"><%= mu(picture, :description) %></div>
 </li>
-

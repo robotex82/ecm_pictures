@@ -1,0 +1,15 @@
+de:
+  activerecord:
+    models:
+      ecm/pictures/attached_picture:
+        one: Verknüpftes Bild
+        other: Verknüpfte Bilder
+    attributes:
+      ecm/pictures/attached_picture:
+        picture: Bild
+        pictureable: Verknüpft mit
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  resources:
+    ecm_pictures_pictures: verknuepfte-bilder
+

@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      ecm/pictures/attached_picture:
+        one: attached picture
+        other: attached pictures
+    attributes:
+      ecm/pictures/attached_picture:
+        picture: picture
+        pictureable: attached to
+        created_at: created at
+        updated_at: updated at
+  resources:
+    ecm_pictures_pictures: attached-pictures
+

@@ -1,16 +1,5 @@
 <h1><%= Ecm::Pictures::Picture.model_name.human(:count => :other) %></h1>
 
-<!-- <div class="pictures" data-target="#modal-gallery">
-  <% @pictures.each do |picture| %>
-    <p>
-      <h2><%= picture %></h2>
-      <div class="row">
-        <%= render picture %>
-      </div>
-    </p>
-  <% end %>
-</div> -->
-
 <div class="pictures row-fluid" data-target="#modal-gallery" data-toggle="modal-gallery">
   <ul class="thumbnails">
     <% @pictures.each do |picture| %>

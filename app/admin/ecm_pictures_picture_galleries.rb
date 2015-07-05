@@ -17,20 +17,20 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
       f.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
     end
 
-    f.inputs do
-      f.has_many :pictures do |p|
-        p.input :name
-        if p.object.persisted?
-          p.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
-        end
-        p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:default_thumb))
-        p.input :description
+   f.inputs do
+    f.has_many :pictures do |p|
+      p.input :name
+      if p.object.persisted?
+        p.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+      end
+      p.input :image, :as => :file, :hint => p.template.image_tag(p.object.image.url(:default_thumb))
+      p.input :description
 
-        p.inputs do
-          p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
-        end
+      p.inputs do
+        p.input :markup_language, :as => :select, :collection => Ecm::Pictures::Configuration.markup_languages
       end
     end
+  end
 
     f.actions
   end
@@ -65,18 +65,18 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
         sortable_columns
         column :thumbnail do |picture|
           link_to(image_tag(picture.image.url(:default_thumb)), [:admin, picture])
-        end
+        end # column
         column :name
         column :image_file_size, :sortable => :image_file_size do |picture|
           number_to_human_size(picture.image_file_size)
-        end
+        end # column
         column :created_at
         column do |picture|
           link_to(I18n.t('active_admin.view'), [:admin, picture], :class => "member_link view_link") +
           link_to(I18n.t('active_admin.edit'), [:edit, :admin, picture], :class => "member_link edit_link")
-        end
-      end
-    end
+        end # column
+      end # table_for
+    end # panel
   end # show
 
   sidebar Ecm::Pictures::PictureGallery.human_attribute_name(:details), :only => :show do
@@ -91,3 +91,4 @@ ActiveAdmin.register Ecm::Pictures::PictureGallery do
     end
   end # sidebar
 end if defined?(::ActiveAdmin)
+

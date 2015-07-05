@@ -10,6 +10,9 @@ module Ecm
           copy_file "ecm.pictures.en.yml", "config/locales/ecm.pictures.en.yml"
           copy_file "ecm.pictures.de.yml", "config/locales/ecm.pictures.de.yml"
 
+          copy_file "ecm.pictures.attached_picture.en.yml", "config/locales/ecm.pictures.attached_picture.en.yml"
+          copy_file "ecm.pictures.attached_picture.de.yml", "config/locales/ecm.pictures.attached_picture.de.yml"          
+
           copy_file "ecm.pictures.picture.en.yml", "config/locales/ecm.pictures.picture.en.yml"
           copy_file "ecm.pictures.picture.de.yml", "config/locales/ecm.pictures.picture.de.yml"
 

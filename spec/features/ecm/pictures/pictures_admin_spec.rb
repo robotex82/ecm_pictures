@@ -135,7 +135,8 @@ feature 'Ecm::Pictures::Picture admin' do
       @resource = FactoryGirl.create(@resource_factory_name)
       @resource_count = @resource_class.count
       visit "#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}"
-      find(:xpath, "//a[@href='#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}' and @data-method='delete']").click
+
+      find(:xpath, "//a[@href='#{@admin_area_path}/#{@resource_path}/#{@resource.to_param}'][@data-method='delete']").click
     end
 
     scenario 'should delete the resource' do

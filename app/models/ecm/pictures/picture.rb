@@ -3,7 +3,7 @@ class Ecm::Pictures::Picture < ActiveRecord::Base
 
   # associations
   belongs_to :picture_gallery, :counter_cache => true
-
+  has_many :attached_pictures, :foreign_key => 'ecm_pictures_picture_id'
   # attributes
   attr_accessible :description,
                   :image,

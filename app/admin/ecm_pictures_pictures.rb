@@ -7,13 +7,13 @@ ActiveAdmin.register Ecm::Pictures::Picture do
   config.sort_order = 'picture_gallery_id, position'
   sortable_member_actions
 
-  controller do
-    def destroy
-      destroy! do |format|
-         format.html { redirect_to :back }
-      end
-    end
-  end
+  # controller do
+  #   def destroy
+  #     destroy! do |format|
+  #        format.html { redirect_to :back }
+  #     end
+  #   end
+  # end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
